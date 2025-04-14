@@ -2,7 +2,7 @@
 
 FixPerspective is a free, browser-based tool for correcting perspective distortion in images. It allows users to easily warp, align, and straighten photos with precision using Bezier control points.
 
-![FixPerspective Screenshot](public/og-video.mp4)
+<img src="public/og-image.png" alt="FixPerspective Screenshot" width="100%">
 
 ## Features
 
@@ -90,4 +90,6 @@ This project is created by [Faiziev](https://github.com/Faiziev).
 
 If you find this tool useful, consider supporting the developer:
 
-[<img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=faiziev&button_colour=000000&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00" alt="Buy Me A Coffee" style="height: 40px;">](https://www.buymeacoffee.com/faiziev)
+<a href="https://www.buymeacoffee.com/faiziev">
+  <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=faiziev&button_colour=000000&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00" alt="Buy Me A Coffee" style="height: 40px;">
+</a>
