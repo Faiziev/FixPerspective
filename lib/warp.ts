@@ -10,7 +10,7 @@ export function drawPath(
 ) {
   if (points.length < 2) return
 
-  ctx.strokeStyle = "rgba(59, 130, 246, 0.8)"
+  ctx.strokeStyle = "rgba(59, 130, 246, 0.7)"
   ctx.lineWidth = 2
   ctx.beginPath()
 
@@ -41,7 +41,7 @@ export function drawControlPoints(
 
   points.forEach((point, index) => {
     // Draw the main control point
-    ctx.fillStyle = "rgba(59, 130, 246, 1)"
+    ctx.fillStyle = "rgba(59, 130, 246, 0.7)"
     ctx.strokeStyle = "white"
     ctx.lineWidth = 2
 
@@ -175,13 +175,13 @@ export function perspectiveTransform(
 ) {
   // Clear the destination canvas
   ctx.clearRect(0, 0, canvasSize.width, canvasSize.height)
-  
+
   // Convert normalized points to canvas coordinates
   const quadPoints = points.map((point) => ({
     x: point.x * canvasSize.width,
     y: point.y * canvasSize.height,
   }))
-  
+
   // Calculate target rectangle dimensions based on the quad points
   const minX = Math.floor(Math.min(...quadPoints.map(p => p.x)))
   const maxX = Math.ceil(Math.max(...quadPoints.map(p => p.x)))
@@ -207,7 +207,7 @@ export function perspectiveTransform(
   const tempCtx = tempCanvas.getContext('2d', { willReadFrequently: true })
   
   if (!tempCtx) return
-  
+
   // First, draw the source image to the temp canvas
   tempCtx.drawImage(sourceCanvas, 0, 0)
   
@@ -245,7 +245,7 @@ export function perspectiveTransform(
       const yWeight = srcY - srcY1
       
       // For each color channel (RGBA)
-      for (let c = 0; c < 4; c++) {
+        for (let c = 0; c < 4; c++) {
         const i11 = ((srcY1 * canvasSize.width) + srcX1) * 4 + c
         const i12 = ((srcY1 * canvasSize.width) + srcX2) * 4 + c
         const i21 = ((srcY2 * canvasSize.width) + srcX1) * 4 + c
@@ -396,7 +396,7 @@ export function exportWarpedImage(canvas: HTMLCanvasElement, points: Point[], qu
     x: point.x * canvas.width,
     y: point.y * canvas.height,
   }))
-  
+
   // Calculate the bounding box of the source points
   const minX = Math.floor(Math.min(...sourcePoints.map((p) => p.x)))
   const minY = Math.floor(Math.min(...sourcePoints.map((p) => p.y)))
@@ -417,9 +417,9 @@ export function exportWarpedImage(canvas: HTMLCanvasElement, points: Point[], qu
 
   try {
     // Create the output canvas with the calculated dimensions
-    const outputCanvas = document.createElement("canvas")
-    outputCanvas.width = width
-    outputCanvas.height = height
+  const outputCanvas = document.createElement("canvas")
+  outputCanvas.width = width
+  outputCanvas.height = height
     const outputCtx = outputCanvas.getContext("2d", {
       willReadFrequently: true,
       alpha: true
@@ -536,7 +536,7 @@ export function exportWarpedImage(canvas: HTMLCanvasElement, points: Point[], qu
       
       // Draw only the selected region to the output canvas
       outputCtx.drawImage(
-        canvas,
+    canvas,
         minX, minY, width, height,  // Source region
         0, 0, width, height         // Destination region (covers the entire output canvas)
       )
