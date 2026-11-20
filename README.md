@@ -54,8 +54,8 @@ The app performs perspective transformation using homography matrices calculated
 
 ```bash
 # Clone the repository
-git clone https://github.com/Faiziev/fix-perspective.git
-cd fix-perspective
+git clone https://github.com/Faiziev/FixPerspective.git
+cd FixPerspective
 
 # Install dependencies
 npm install
